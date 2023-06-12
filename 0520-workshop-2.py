@@ -59,7 +59,7 @@ print('')
 
 def prom_mascota(n):
     resultado = (n/10)*3
-    print(f'En total en el AMB se estima un total de {int(resultado)} mascotas')
+    print(f'En total en el AMB se estima un total de {int(resultado)} miles de mascotas')
 
 prom_mascota(pop)
 
@@ -71,15 +71,20 @@ print('Challenge')
 print('*'*10)
 print('')
 
+'''
 def incremento_anual(n):
     solve = n*(1.03)
     total_proyectado = solve + poblacion
     print('')
     print(f'La población total proyectada para {proyectado} años, es de {total_proyectado} miles de personas')
-  
-print('')
-print(f'En total en el AMB hay una población de {poblacion} miles de personas')
-print('')
-proyectado = int(input('Ingrese el numero de años que desea proyectar: '))
+'''
+print(f'La población inicial a proyectar es {pop} miles de personas')
 
-incremento_anual(proyectado)
+years = int(input('Ingrese el numero de años a proyectar : '))
+
+for year in range(0, years):
+    pop = int (pop + (pop * 1.03 / 100))
+    print('')
+    print(f'En {year+1} años se proyecta una población de {pop} miles de personas')
+    print(f'ademas de {int((pop/10)*3)} miles de mascotas')
+    
